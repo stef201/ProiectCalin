@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<meta name="description" content=""></meta>
+<meta name="author" content=""></meta>
+<link rel="icon" href="../../favicon.ico"></link>
+
+<title>Student Advertisement</title>
+
+<!-- Bootstrap core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
+
+
+<!-- Custom styles for this template -->
+<link href="css/main.css" rel="stylesheet"></link>
+
+</head>
+
+<body>
+
+	
+		<div class="content" th:fragment="messagebox">
+			<div class="container">
+	<div class="row">
+		<div class="box-body no-padding">
+                  <div class="mailbox-controls">
+                    <!-- Check all button -->
+                    <button class="btn btn-default btn-sm checkbox-toggle"><i class="glyphicon glyphicon-unchecked"></i></button>
+                    <div class="btn-group">
+                      <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-trash"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-arrow-left"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-share-alt"></i></button>
+                    </div><!-- /.btn-group -->
+                    <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-refresh"></i></button>
+                    <div class="pull-right">
+                      1-50/200
+                      <div class="btn-group">
+                        <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-arrow-left"></i></button>
+                        <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-arrow-right"></i></button>
+                      </div><!-- /.btn-group -->
+                    </div><!-- /.pull-right -->
+                  </div>
+                  <hr>
+                  <div class="table-responsive mailbox-messages">
+                    <table class="table table-hover table-striped">
+                      <tbody>
+                      <span th:each="message : ${page}">
+                        <tr>
+                          <td><input type="checkbox"></input></td>
+                          <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                          <td class="mailbox-name"><a href="read-mail.html" th:text="${message.sender.email}"></a></td>
+                          <td class="mailbox-subject"><b th:text="${message.messageTitle}"></b></td>
+                          <td class="mailbox-attachment"></td>
+                          <td class="mailbox-date">5 mins ago</td>
+                        </tr>
+                       </span>
+                      </tbody>
+                    </table><!-- /.table -->
+                  </div><!-- /.mail-box-messages -->
+                  </hr>
+                </div><!-- /.box-body -->
+                <hr>
+                <div class="box-footer no-padding">
+                  <div class="mailbox-controls">
+                    <!-- Check all button -->
+                    <button class="btn btn-default btn-sm checkbox-toggle"><i class="glyphicon glyphicon-unchecked"></i></button>
+                    <div class="btn-group">
+                      <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-trash"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-arrow-left"></i></button>
+                      <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-share-alt"></i></button>
+                    </div><!-- /.btn-group -->
+                    <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-refresh"></i></button>
+                    <div class="pull-right">
+                      1-50/200
+                      <div class="btn-group">
+                        <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-arrow-left"></i></button>
+                        <button class="btn btn-default btn-sm"><i class="glyphicon glyphicon-arrow-right"></i></button>
+                      </div><!-- /.btn-group -->
+                    </div><!-- /.pull-right -->
+                  </div>
+                </div>
+                </hr>
+              </div><!-- /. box -->
+            </div><!-- /.col -->
+          </div><!-- /.row -->
+
+
+
+	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+	<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+</html>
+
+
